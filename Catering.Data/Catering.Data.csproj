@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLayer\CateringContext.cs" />
+    <Compile Include="DataLayer\GenericRepository.cs" />
+    <Compile Include="DataLayer\IGenericRepository.cs" />
+    <Compile Include="DataLayer\IUserRepository.cs" />
+    <Compile Include="DataLayer\UserRepository.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Dish.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\User.cs" />
@@ -55,9 +61,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataLayer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
