@@ -49,7 +49,11 @@
     <Compile Include="DataLayer\CateringContext.cs" />
     <Compile Include="DataLayer\GenericRepository.cs" />
     <Compile Include="DataLayer\IGenericRepository.cs" />
+    <Compile Include="DataLayer\IDishRepository.cs" />
+    <Compile Include="DataLayer\IUnitOfWork.cs" />
     <Compile Include="DataLayer\IUserRepository.cs" />
+    <Compile Include="DataLayer\DishRepository.cs" />
+    <Compile Include="DataLayer\UnitOfWork.cs" />
     <Compile Include="DataLayer\UserRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Dish.cs" />
