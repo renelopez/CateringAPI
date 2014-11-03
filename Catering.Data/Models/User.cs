@@ -10,6 +10,12 @@ namespace Catering.Data.Models
 {
     public class User
     {
+        public enum UserType
+        {
+            Admin,
+            Normal
+        }
+
         public User()
         {
             Dishes=new List<Dish>();
@@ -19,6 +25,8 @@ namespace Catering.Data.Models
         public string LastName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
+        public UserType Type { get; set; }
+
 
         public virtual Location Location { get; set; }
         public virtual ICollection<Dish> Dishes { get; set; }

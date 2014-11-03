@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using Catering.Data.DataLayer;
 using Catering.Data.Models;
 
-namespace Catering.Service.Controllers
+namespace Catering.ServiceSH.Controllers
 {
     public class UserController : ApiController
     {
@@ -18,6 +14,7 @@ namespace Catering.Service.Controllers
             UserRepository = userRepository;
         }
 
+        [HttpGet]
         public IEnumerable<User> GetAll()
         {
             return UserRepository.GetAll();

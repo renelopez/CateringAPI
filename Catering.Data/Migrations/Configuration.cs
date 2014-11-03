@@ -23,9 +23,9 @@ namespace Catering.Data.Migrations
             //
                 context.Users.AddOrUpdate(
                   p => p.FirstName,
-                  new User { FirstName = "Rene Lopez" },
-                  new User { FirstName = "Brice Lambson" },
-                  new User { FirstName = "Rowan Miller" }
+                  new User { FirstName = "Rene Lopez",Type = User.UserType.Admin},
+                  new User { FirstName = "Brice Lambson",Type = User.UserType.Normal },
+                  new User { FirstName = "Rowan Miller", Type = User.UserType.Normal }
                 );
             //
         }

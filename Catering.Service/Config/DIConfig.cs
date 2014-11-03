@@ -22,9 +22,7 @@ namespace Catering.Service.Config
             // Get your HTTP Configuration
             var config = GlobalConfiguration.Configuration;
 
-            var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
-            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-
+         
             // Register your Web API controllers
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.Register<DbContext>((_) => new CateringContext());
