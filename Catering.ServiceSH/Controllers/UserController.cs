@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web.Http;
 using Catering.Data.DataLayer;
 using Catering.Data.Models;
@@ -15,9 +16,9 @@ namespace Catering.ServiceSH.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<User> GetAll()
+        public async Task<List<User>> GetAll()
         {
-            return UserRepository.GetAll();
+            return await UserRepository.GetAll();
         } 
     }
 }

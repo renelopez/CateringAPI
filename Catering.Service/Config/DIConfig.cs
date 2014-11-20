@@ -9,6 +9,7 @@ using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
 using Catering.Data.DataLayer;
+using Catering.Data.Migrations;
 using Newtonsoft.Json.Serialization;
 
 namespace Catering.Service.Config
@@ -22,7 +23,7 @@ namespace Catering.Service.Config
             // Get your HTTP Configuration
             var config = GlobalConfiguration.Configuration;
 
-         
+
             // Register your Web API controllers
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.Register<DbContext>((_) => new CateringContext());
@@ -34,6 +35,8 @@ namespace Catering.Service.Config
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
             DbConfiguration.Loaded +=
                 (s, e) => e.AddDependencyResolver(new AutoFacDBDependencyResolver(container), false);
+
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<CateringContext, Configuration>());
 
         }
     }

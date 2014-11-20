@@ -9,11 +9,11 @@ namespace Catering.Data.DataLayer
 {
     public interface IGenericRepository<T>
     {
-        IEnumerable<T> GetAll();
-        IEnumerable<T> FindBy(Expression<Func<T,bool>> predicate);
+        Task<List<T>> GetAll();
+        Task<List<T>> FindBy(Expression<Func<T,bool>> predicate);
         T Add(T entity);
         T Delete(T entity);
         void Edit(T entity);
-        void Save();
+        Task Save();
     }
 }

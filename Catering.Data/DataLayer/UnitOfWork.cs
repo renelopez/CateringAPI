@@ -32,10 +32,10 @@ namespace Catering.Data.DataLayer
             /// Saves all pending changes
             /// </summary>
             /// <returns>The number of objects in an Added, Modified, or Deleted state</returns>
-            public int Commit()
+            public async Task<int> CommitAsync()
             {
                 // Save changes with the default options
-                return _dbContext.SaveChanges();
+                return await _dbContext.SaveChangesAsync();
             }
 
             /// <summary>

@@ -26,6 +26,7 @@ namespace Catering.ServiceSH
             var config = new HttpConfiguration();
             var cors = new EnableCorsAttribute("*", "*", "*") { SupportsCredentials = true };
             config.EnableCors(cors);
+            config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{action}",

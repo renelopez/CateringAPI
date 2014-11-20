@@ -14,9 +14,9 @@ namespace Catering.Data.DataLayer
         {
         }
 
-        public Task<User> GetById(int id)
+        public async Task<User> GetById(int id)
         {
-            return _dbSet.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await _dbSet.Where(x => x.Id == id).FirstOrDefaultAsync();
         }
     }
 }

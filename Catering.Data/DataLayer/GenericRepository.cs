@@ -18,15 +18,14 @@ namespace Catering.Data.DataLayer
             _entities = context;
             _dbSet = context.Set<T>();
         }
-        public virtual IEnumerable<T> GetAll()
+        public virtual async Task<List<T>> GetAll()
         {
-            return _dbSet.AsEnumerable();
+            return await _dbSet.ToListAsync();
         }
 
-        public IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate)
+        public virtual async Task<List<T>> FindBy(Expression<Func<T, bool>> predicate)
         {
-            var query = _dbSet.Where(predicate).AsEnumerable();
-            return query;
+            return await _dbSet.Where(predicate).ToListAsync();
         }
 
         public T Add(T entity)
@@ -44,9 +43,9 @@ namespace Catering.Data.DataLayer
             _entities.Entry(entity).State = System.Data.Entity.EntityState.Modified;
         }
 
-        public void Save()
+        public async Task Save()
         {
-            _entities.SaveChanges();
+            await _entities.SaveChangesAsync();
         }
     }
 }

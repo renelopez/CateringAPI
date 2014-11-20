@@ -99,6 +99,7 @@
   <ItemGroup>
     <Compile Include="Config\AutoFacDBDependencyResolver.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LoginCredentials.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

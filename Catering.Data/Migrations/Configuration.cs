@@ -12,6 +12,7 @@ namespace Catering.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Catering.Data.DataLayer.CateringContext context)
@@ -23,7 +24,7 @@ namespace Catering.Data.Migrations
             //
                 context.Users.AddOrUpdate(
                   p => p.FirstName,
-                  new User { FirstName = "Rene Lopez",Type = User.UserType.Admin},
+                  new User { FirstName = "Rene Lopez",Type = User.UserType.Admin,UserName = "renelopezcano",Password = "renerene"},
                   new User { FirstName = "Brice Lambson",Type = User.UserType.Normal },
                   new User { FirstName = "Rowan Miller", Type = User.UserType.Normal }
                 );
