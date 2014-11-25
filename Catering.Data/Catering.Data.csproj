@@ -46,25 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataLayer\CateringContext.cs" />
-    <Compile Include="DataLayer\GenericRepository.cs" />
-    <Compile Include="DataLayer\IGenericRepository.cs" />
-    <Compile Include="DataLayer\IDishRepository.cs" />
-    <Compile Include="DataLayer\IUnitOfWork.cs" />
-    <Compile Include="DataLayer\IUserRepository.cs" />
-    <Compile Include="DataLayer\DishRepository.cs" />
-    <Compile Include="DataLayer\UnitOfWork.cs" />
-    <Compile Include="DataLayer\UserRepository.cs" />
+    <Compile Include="CateringContext.cs" />
+    <Compile Include="Repositories\Implementation\GenericRepository.cs" />
+    <Compile Include="Repositories\Contracts\IOrderRepository.cs" />
+    <Compile Include="Repositories\Contracts\IUnitOfWork.cs" />
+    <Compile Include="Repositories\Implementation\DishRepository.cs" />
+    <Compile Include="Repositories\Contracts\IUserRepository.cs" />
+    <Compile Include="Repositories\Contracts\IDishRepository.cs" />
+    <Compile Include="Repositories\Contracts\IGenericRepository.cs" />
+    <Compile Include="Repositories\Implementation\UnitOfWork.cs" />
+    <Compile Include="Repositories\Implementation\UserRepository.cs" />
+    <Compile Include="Migrations\201411221846387_WTF.cs" />
+    <Compile Include="Migrations\201411221846387_WTF.Designer.cs">
+      <DependentUpon>201411221846387_WTF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Dish.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Models\UserDish.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201411221846387_WTF.resx">
+      <DependentUpon>201411221846387_WTF.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

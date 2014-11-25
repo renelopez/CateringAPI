@@ -12,6 +12,8 @@ using Autofac;
 using Autofac.Integration.WebApi;
 using Catering.Data.DataLayer;
 using Catering.Data.Migrations;
+using Catering.Data.Repositories.Contracts;
+using Catering.Data.Repositories.Implementation;
 using Catering.ServiceSH.Config;
 using Newtonsoft.Json.Serialization;
 using Owin;

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Catering.Data.DataLayer;
 using Catering.Data.Models;
+using Catering.Data.Repositories.Contracts;
 
 namespace Catering.ServiceSH.Controllers
 {
@@ -18,7 +19,7 @@ namespace Catering.ServiceSH.Controllers
         [HttpGet]
         public async Task<List<User>> GetAll()
         {
-            return await UserRepository.GetAll();
+            return await UserRepository.GetAllAsync();
         } 
     }
 }

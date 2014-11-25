@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Catering.Data.DataLayer
+namespace Catering.Data.Repositories.Contracts
 {
     public interface IUnitOfWork
     {

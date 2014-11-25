@@ -18,7 +18,7 @@ namespace Catering.Data.Models
 
         public User()
         {
-            Dishes=new List<UserDish>();
+            Orders=new List<Order>();
         }
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -29,7 +29,7 @@ namespace Catering.Data.Models
 
 
         public virtual Location Location { get; set; }
-        public virtual ICollection<UserDish> Dishes { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 
     

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
+using Catering.Data.Repositories.Contracts;
 
-namespace Catering.Data.DataLayer
+namespace Catering.Data.Repositories.Implementation
 {
     public abstract class GenericRepository<T>:IGenericRepository<T> where T : class
     {
@@ -18,7 +18,7 @@ namespace Catering.Data.DataLayer
             _entities = context;
             _dbSet = context.Set<T>();
         }
-        public virtual async Task<List<T>> GetAll()
+        public virtual async Task<List<T>> GetAllAsync()
         {
             return await _dbSet.ToListAsync();
         }
@@ -26,6 +26,11 @@ namespace Catering.Data.DataLayer
         public virtual async Task<List<T>> FindBy(Expression<Func<T, bool>> predicate)
         {
             return await _dbSet.Where(predicate).ToListAsync();
+        }
+
+        public virtual async Task<T> FindOneBy(Expression<Func<T, bool>> predicate)
+        {
+            return await _dbSet.FirstOrDefaultAsync(predicate);
         }
 
         public T Add(T entity)

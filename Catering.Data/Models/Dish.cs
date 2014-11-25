@@ -10,11 +10,13 @@ namespace Catering.Data.Models
     {
         public Dish()
         {
-            Users=new List<UserDish>();
+            Orders = new List<Order>();
+            Menus=new List<Menu>();
         }
         public int Id { get; set; }
         public virtual string Name { get; set; }
         public virtual string Description { get; set; }
-        public virtual ICollection<UserDish> Users { get; set; } 
+        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Menu> Menus { get; set; } 
     }
 }

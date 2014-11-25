@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 
 namespace Catering.Data.Models
 {
-    public class UserDish
+    public class Order
     {
         public int Id { get; set; }
+        [ForeignKey("User")]
+        public int UserId { get; set; }
+        public DateTime DateTime { get; set; }
         public virtual User User { get; set; }
-        public virtual Dish Dish { get; set; }
-        public DateTime DateTime { get; set; }  
+        public virtual ICollection<Dish> Dishes { get; set; }
+
     }
 }

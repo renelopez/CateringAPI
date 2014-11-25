@@ -22,13 +22,12 @@ namespace Catering.Service
     {
         protected void Application_Start()
         {
+            DIConfig.Configure();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            DIConfig.Configure();
-            
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<CateringContext, Configuration>());
         }
 
