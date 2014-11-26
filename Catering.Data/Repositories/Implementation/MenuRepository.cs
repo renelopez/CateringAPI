@@ -5,9 +5,10 @@ using Catering.Data.Repositories.Contracts;
 
 namespace Catering.Data.Repositories.Implementation
 {
-    public class DishRepository:GenericRepository<Dish>,IDishRepository
+    public class MenuRepository:GenericRepository<Menu>,IMenuRepository
     {
-        public DishRepository(DbContext context) : base(context)
+        public MenuRepository(DbContext context)
+            : base(context)
         {
         }
     }

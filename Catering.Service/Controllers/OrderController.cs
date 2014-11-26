@@ -26,9 +26,6 @@ namespace Catering.Service.Controllers
         }
 
       
-
-        
-
         // POST: api/Orders
         [ResponseType(typeof(Order))]
         public async Task<IHttpActionResult> PostOrder(Order order)
@@ -44,5 +41,6 @@ namespace Catering.Service.Controllers
             return CreatedAtRoute("DefaultApi", new { id = order.Id }, order);
         }
 
+        
     }
 }

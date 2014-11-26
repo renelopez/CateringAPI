@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CateringContext.cs" />
+    <Compile Include="Repositories\Contracts\IMenuRepository.cs" />
+    <Compile Include="Repositories\Implementation\OrderRepository.cs" />
+    <Compile Include="Repositories\Implementation\MenuRepository.cs" />
     <Compile Include="Repositories\Implementation\GenericRepository.cs" />
     <Compile Include="Repositories\Contracts\IOrderRepository.cs" />
     <Compile Include="Repositories\Contracts\IUnitOfWork.cs" />

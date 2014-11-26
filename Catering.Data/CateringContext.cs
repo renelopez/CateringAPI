@@ -14,5 +14,7 @@ namespace Catering.Data.DataLayer
         public DbSet<Dish> Dishes { get; set; }
 
         public System.Data.Entity.DbSet<Catering.Data.Models.Order> Orders { get; set; }
+
+        public System.Data.Entity.DbSet<Catering.Data.Models.Menu> Menus { get; set; }
     }
 }

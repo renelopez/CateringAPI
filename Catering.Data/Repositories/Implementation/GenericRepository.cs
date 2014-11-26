@@ -23,12 +23,12 @@ namespace Catering.Data.Repositories.Implementation
             return await _dbSet.ToListAsync();
         }
 
-        public virtual async Task<List<T>> FindBy(Expression<Func<T, bool>> predicate)
+        public virtual async Task<List<T>> FindByAsync(Expression<Func<T, bool>> predicate)
         {
             return await _dbSet.Where(predicate).ToListAsync();
         }
 
-        public virtual async Task<T> FindOneBy(Expression<Func<T, bool>> predicate)
+        public virtual async Task<T> FindOneByAsync(Expression<Func<T, bool>> predicate)
         {
             return await _dbSet.FirstOrDefaultAsync(predicate);
         }

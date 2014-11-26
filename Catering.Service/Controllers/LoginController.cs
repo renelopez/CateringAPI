@@ -23,7 +23,7 @@ namespace Catering.Service.Controllers
         [ResponseType(typeof(LoginModel))]
         public async Task<IHttpActionResult> Login([FromBody]LoginCredentials credentials)
         {
-            var user = await UserRepository.FindBy(usr => usr.UserName == credentials.Username && usr.Password == credentials.Password);
+            var user = await UserRepository.FindByAsync(usr => usr.UserName == credentials.Username && usr.Password == credentials.Password);
             if (user == null)
             {
                 return NotFound();

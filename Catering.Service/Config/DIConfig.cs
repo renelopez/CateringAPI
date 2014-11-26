@@ -31,6 +31,8 @@ namespace Catering.Service.Config
             builder.Register<DbContext>((_) => new CateringContext()).InstancePerRequest();
             builder.RegisterType<UserRepository>().As<IUserRepository>();
             builder.RegisterType<DishRepository>().As<IDishRepository>();
+            builder.RegisterType<OrderRepository>().As<IOrderRepository>();
+            builder.RegisterType<MenuRepository>().As<IMenuRepository>();
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
 
             // Set the dependency resolver to be Autofac
