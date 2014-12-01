@@ -10,8 +10,11 @@ using Autofac;
 using Autofac.Integration.WebApi;
 using Catering.Data.DataLayer;
 using Catering.Data.Migrations;
-using Catering.Data.Repositories.Contracts;
-using Catering.Data.Repositories.Implementation;
+using Catering.Data.Repositories.Common;
+using Catering.Data.Repositories.Dish;
+using Catering.Data.Repositories.Menu;
+using Catering.Data.Repositories.Order;
+using Catering.Data.Repositories.User;
 using Newtonsoft.Json.Serialization;
 
 namespace Catering.Service.Config

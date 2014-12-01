@@ -4,9 +4,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Catering.Data.Repositories.Contracts;
 
-namespace Catering.Data.Repositories.Implementation
+namespace Catering.Data.Repositories.Common
 {
     public abstract class GenericRepository<T>:IGenericRepository<T> where T : class
     {

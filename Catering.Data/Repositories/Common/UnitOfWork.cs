@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Catering.Data.Repositories.Contracts;
 
-namespace Catering.Data.DataLayer
+namespace Catering.Data.Repositories.Common
 {
     /// <summary>
     /// The Entity Framework implementation of IUnitOfWork

@@ -47,18 +47,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CateringContext.cs" />
-    <Compile Include="Repositories\Contracts\IMenuRepository.cs" />
-    <Compile Include="Repositories\Implementation\OrderRepository.cs" />
-    <Compile Include="Repositories\Implementation\MenuRepository.cs" />
-    <Compile Include="Repositories\Implementation\GenericRepository.cs" />
-    <Compile Include="Repositories\Contracts\IOrderRepository.cs" />
-    <Compile Include="Repositories\Contracts\IUnitOfWork.cs" />
-    <Compile Include="Repositories\Implementation\DishRepository.cs" />
-    <Compile Include="Repositories\Contracts\IUserRepository.cs" />
-    <Compile Include="Repositories\Contracts\IDishRepository.cs" />
-    <Compile Include="Repositories\Contracts\IGenericRepository.cs" />
-    <Compile Include="Repositories\Implementation\UnitOfWork.cs" />
-    <Compile Include="Repositories\Implementation\UserRepository.cs" />
+    <Compile Include="Repositories\Dish\DishDTO.cs" />
+    <Compile Include="Repositories\Dish\DishListDTO.cs" />
+    <Compile Include="Repositories\Order\IOrderRepository.cs" />
+    <Compile Include="Repositories\User\IUserRepository.cs" />
+    <Compile Include="Repositories\Menu\IMenuRepository.cs" />
+    <Compile Include="Repositories\Order\OrderRepository.cs" />
+    <Compile Include="Repositories\Menu\MenuRepository.cs" />
+    <Compile Include="Repositories\Common\GenericRepository.cs" />
+    <Compile Include="Repositories\Common\IUnitOfWork.cs" />
+    <Compile Include="Repositories\Dish\DishRepository.cs" />
+    <Compile Include="Repositories\Dish\IDishRepository.cs" />
+    <Compile Include="Repositories\Common\IGenericRepository.cs" />
+    <Compile Include="Repositories\Common\UnitOfWork.cs" />
+    <Compile Include="Repositories\User\UserRepository.cs" />
     <Compile Include="Migrations\201411221846387_WTF.cs" />
     <Compile Include="Migrations\201411221846387_WTF.Designer.cs">
       <DependentUpon>201411221846387_WTF.cs</DependentUpon>

@@ -11,7 +11,8 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using Catering.Data.DataLayer;
 using Catering.Data.Models;
-using Catering.Data.Repositories.Contracts;
+using Catering.Data.Repositories.Common;
+using Catering.Data.Repositories.Menu;
 
 namespace Catering.Service.Controllers
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Catering.Data.Repositories.Contracts
+namespace Catering.Data.Repositories.Common
 {
     public interface IGenericRepository<T>
     {

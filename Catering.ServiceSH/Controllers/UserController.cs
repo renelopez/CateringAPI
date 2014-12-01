@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Catering.Data.DataLayer;
 using Catering.Data.Models;
-using Catering.Data.Repositories.Contracts;
+using Catering.Data.Repositories.User;
 
 namespace Catering.ServiceSH.Controllers
 {

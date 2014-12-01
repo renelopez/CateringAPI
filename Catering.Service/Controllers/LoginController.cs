@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Catering.Data.DataLayer;
-using Catering.Data.Repositories.Contracts;
+using Catering.Data.Repositories.User;
 
 namespace Catering.Service.Controllers
 {
