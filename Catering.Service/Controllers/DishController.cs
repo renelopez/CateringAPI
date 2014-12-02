@@ -37,7 +37,7 @@ namespace Catering.Service.Controllers
         }
 
         // GET api/<controller>/5
-        [Route("{id:int}",Name="GetById")]
+        [Route("{id:int}",Name="GetDishById")]
         [ResponseType(typeof(Dish))]
         public async Task<IHttpActionResult> Get(int id)
         {
@@ -65,7 +65,7 @@ namespace Catering.Service.Controllers
             dish.Id = await DishRepository.GenerateIdAsync();
             DishRepository.Add(dish);
             await UnitOfWork.CommitAsync();
-            return CreatedAtRoute("GetById", new {id = dish.Id}, dish);
+            return CreatedAtRoute("GetDishById", new { id = dish.Id }, dish);
         }
 
         // DELETE api/<controller>/5
