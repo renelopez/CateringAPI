@@ -3,7 +3,6 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using Catering.Data.DataLayer;
 using Catering.Data.Repositories.User;
 
 namespace Catering.ServiceSH.Controllers

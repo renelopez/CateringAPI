@@ -10,7 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using Autofac;
 using Autofac.Integration.WebApi;
-using Catering.Data.DataLayer;
+using Catering.Data;
 using Catering.Data.Migrations;
 using Catering.Data.Repositories.Dish;
 using Catering.Data.Repositories.User;

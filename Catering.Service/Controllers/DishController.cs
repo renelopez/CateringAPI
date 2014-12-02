@@ -1,14 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using AutoMapper;
 using Catering.Data.Models;
 using Catering.Data.Repositories.Common;
 using Catering.Data.Repositories.Dish;
+using Catering.Service.Controllers;
 
+//[assembly :WebActivatorEx.PreApplicationStartMethod(typeof(DishController),"AutoMapperStart")]
 namespace Catering.Service.Controllers
 {
     [RoutePrefix("api/dish")]
@@ -28,8 +32,8 @@ namespace Catering.Service.Controllers
         [ResponseType(typeof(DishListDTO))]
         public async Task<DishListDTO> Get()
         {
-           var dishListModel = new DishListDTO {dishList = await DishRepository.GetDishListAsync()};
-           return dishListModel;
+            var dishes =await DishRepository.GetDisplayDataAsync();
+            return new DishListDTO {dishList = dishes};
         }
 
         // GET api/<controller>/5

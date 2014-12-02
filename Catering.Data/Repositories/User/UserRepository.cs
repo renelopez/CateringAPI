@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
@@ -27,6 +28,17 @@ namespace Catering.Data.Repositories.User
         public async Task<bool> ExistsAsync(Expression<Func<Models.User, bool>> predicate)
         {
             return await _dbSet.AnyAsync(predicate);
+        }
+
+        public async Task<List<UserDTO>> GetDisplayDataAsync()
+        {
+            return await _dbSet.Select(dish => new UserDTO
+            {
+                Id = dish.Id,
+                FirstName = dish.FirstName,
+                LastName = dish.LastName,
+                UserName = dish.UserName
+            }).ToListAsync();
         }
     }
 }

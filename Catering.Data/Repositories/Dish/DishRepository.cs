@@ -25,9 +25,13 @@ namespace Catering.Data.Repositories.Dish
             return await _dbSet.AnyAsync(predicate);
         }
 
-        public async Task<List<DishDTO>> GetDishListAsync()
+        public async Task<List<DishDTO>> GetDisplayDataAsync()
         {
-            return await _dbSet.Select(dish =>new DishDTO{Id=dish.Id,Name=dish.Name}).ToListAsync();
+            return await _dbSet.Select(dish=>new DishDTO
+            {
+                Id = dish.Id,
+                Name = dish.Name
+            }).ToListAsync();
         }
     }
 }

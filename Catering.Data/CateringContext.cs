@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using Catering.Data.Models;
 
-namespace Catering.Data.DataLayer
+namespace Catering.Data
 {
     public class CateringContext:DbContext
     {
+        public CateringContext()
+            : base("name=CateringConnectionString")
+        {
+            
+        }
         public DbSet<User> Users { get; set; }
         public DbSet<Dish> Dishes { get; set; }
 
-        public System.Data.Entity.DbSet<Catering.Data.Models.Order> Orders { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
-        public System.Data.Entity.DbSet<Catering.Data.Models.Menu> Menus { get; set; }
+        public DbSet<Menu> Menus { get; set; }
     }
 }

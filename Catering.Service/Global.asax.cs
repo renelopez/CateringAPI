@@ -11,7 +11,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.WebApi;
-using Catering.Data.DataLayer;
+using Catering.Data;
 using Catering.Data.Migrations;
 using Catering.Service.Config;
 using Newtonsoft.Json.Serialization;

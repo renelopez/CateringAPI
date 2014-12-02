@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
-using Catering.Data.DataLayer;
+using Catering.Data;
 using Catering.Data.Migrations;
 using Catering.Data.Repositories.Common;
 using Catering.Data.Repositories.Dish;

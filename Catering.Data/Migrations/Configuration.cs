@@ -7,7 +7,7 @@ namespace Catering.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    public sealed class Configuration : DbMigrationsConfiguration<Catering.Data.DataLayer.CateringContext>
+    public sealed class Configuration : DbMigrationsConfiguration<CateringContext>
     {
         public Configuration()
         {
@@ -15,7 +15,7 @@ namespace Catering.Data.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(Catering.Data.DataLayer.CateringContext context)
+        protected override void Seed(CateringContext context)
         {
             //  This method will be called after migrating to the latest version.
 
