@@ -69,6 +69,7 @@ namespace Catering.Service.Controllers
         }
 
         // DELETE api/<controller>/5
+        [Route("{id:int}")]
         [HttpDelete]
         public async Task<IHttpActionResult> Delete(int id)
         {
