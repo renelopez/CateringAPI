@@ -50,7 +50,7 @@ namespace Catering.Service.Controllers
             {
                 return BadRequest(ModelState);
             }
-            if (await UserRepository.ExistsAsync(elem => elem.UserName == user.UserName))
+            if (await UserRepository.ExistsAsync(elem => elem.Username == user.Username))
             {
                 return BadRequest("The username already exists.Please type another one.");
             }
@@ -61,6 +61,7 @@ namespace Catering.Service.Controllers
         }
 
         // DELETE api/<controller>/5
+        [Route("")]
         [HttpDelete]
         public async Task<IHttpActionResult> Delete(int id)
         {
