@@ -62,9 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CateringContext.cs" />
+    <Compile Include="Models\OrderDish.cs" />
+    <Compile Include="Models\MenuDish.cs" />
     <Compile Include="Repositories\Dish\DishDTO.cs" />
     <Compile Include="Repositories\Dish\DishListDTO.cs" />
     <Compile Include="Repositories\Dish\IDishRepository.cs" />
+    <Compile Include="Repositories\Dish\MenuDTO.cs" />
     <Compile Include="Repositories\Menu\IMenuRepository.cs" />
     <Compile Include="Repositories\Order\IOrderRepository.cs" />
     <Compile Include="Repositories\User\IUserRepository.cs" />

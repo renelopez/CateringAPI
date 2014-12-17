@@ -14,6 +14,8 @@ namespace Catering.Data
         public DbSet<Dish> Dishes { get; set; }
 
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDish> OrderDishes { get; set; }
+        public DbSet<MenuDish> MenuDishes { get; set; }
 
         public DbSet<Menu> Menus { get; set; }
     }

@@ -10,12 +10,16 @@ namespace Catering.Data.Models
 {
     public class Order
     {
+        public Order()
+        {
+            OrderDishes=new List<OrderDish>();
+        }
         public int Id { get; set; }
         [ForeignKey("User")]
         public int UserId { get; set; }
         public DateTime DateTime { get; set; }
         public virtual User User { get; set; }
-        public virtual ICollection<Dish> Dishes { get; set; }
+        public virtual ICollection<OrderDish> OrderDishes { get; set; }
 
     }
 }

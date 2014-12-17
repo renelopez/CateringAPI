@@ -4,16 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Catering.Data.Models
+namespace Catering.Data.Repositories.Dish
 {
-    public class Menu
+    public class MenuDTO
     {
-        public Menu()
-        {
-            MenuDishes=new List<MenuDish>();
-        }
         public int Id { get; set; }
         public DateTime DateTime { get; set; }
-        public virtual ICollection<MenuDish> MenuDishes { get; set; }
+        public List<DishDTO> Dishes { get; set; }
     }
 }

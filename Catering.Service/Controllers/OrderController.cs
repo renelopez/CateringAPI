@@ -28,17 +28,17 @@ namespace Catering.Service.Controllers
       
         // POST: api/Orders
         [ResponseType(typeof(Order))]
-        public async Task<IHttpActionResult> PostOrder(Order order)
+        public async Task<IHttpActionResult> PostOrder(Order dishUser)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            OrderRepository.Add(order);
+            OrderRepository.Add(dishUser);
             await UnitOfWork.CommitAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = order.Id }, order);
+            return CreatedAtRoute("DefaultApi", new { id = dishUser.Id }, dishUser);
         }
 
         
