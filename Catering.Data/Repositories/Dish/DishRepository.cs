@@ -4,8 +4,11 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using AutoMapper;
 using Catering.Data.Repositories.Common;
+using Catering.Data.Repositories.Dish;
 
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(DishRepository), "AutoMapperStart")]
 namespace Catering.Data.Repositories.Dish
 {
     public class DishRepository:GenericRepository<Models.Dish>,IDishRepository
@@ -27,11 +30,19 @@ namespace Catering.Data.Repositories.Dish
 
         public async Task<List<DishDTO>> GetDisplayDataAsync()
         {
-            return await _dbSet.Select(dish=>new DishDTO
-            {
-                Id = dish.Id,
-                Name = dish.Name
-            }).ToListAsync();
+            //return await _dbSet.Select(dish=>new DishDTO
+            //{
+            //    Id = dish.Id,
+            //    Name = dish.Name
+            //}).ToListAsync();
+            var userlist = await _dbSet.ToListAsync();
+            var list = Mapper.Map<List<DishDTO>>(userlist);
+            return list;
+        }
+
+        public static void AutoMapperStart()
+        {
+            Mapper.CreateMap<Models.User, DishDTO>();
         }
     }
 }

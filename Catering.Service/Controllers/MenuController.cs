@@ -11,7 +11,9 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using Catering.Data.Models;
 using Catering.Data.Repositories.Common;
+using Catering.Data.Repositories.Dish;
 using Catering.Data.Repositories.Menu;
+using Catering.Service.Controllers;
 
 namespace Catering.Service.Controllers
 {
@@ -39,17 +41,20 @@ namespace Catering.Service.Controllers
         }
         // POST: api/Menu
         [ResponseType(typeof(Menu))]
-        public async Task<IHttpActionResult> PostMenu(Menu menu)
+        public async Task<IHttpActionResult> PostMenu(MenuDTO menu)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
+
+
             MenuRepository.Add(menu);
             await UnitOfWork.CommitAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = menu.Id }, menu);
         }
+
     }
 }

@@ -9,7 +9,7 @@ namespace Catering.Data.Repositories.Dish
     public class MenuDTO
     {
         public int Id { get; set; }
-        public DateTime DateTime { get; set; }
+        public String FormattedDate { get; set; }
         public List<DishDTO> Dishes { get; set; }
     }
 }
