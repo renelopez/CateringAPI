@@ -17,6 +17,11 @@ namespace Catering.Data.Repositories.Dish
         {
         }
 
+        public async Task<Models.Dish> GetByIdAsync(int id)
+        {
+            return await _dbSet.Where(x => x.Id == id).FirstOrDefaultAsync();
+        }
+
         public async Task<int> GenerateIdAsync()
         {
             var max=await _dbSet.MaxAsync(el => (int?) el.Id) ?? 0;
@@ -42,7 +47,7 @@ namespace Catering.Data.Repositories.Dish
 
         public static void AutoMapperStart()
         {
-            Mapper.CreateMap<Models.User, DishDTO>();
+            Mapper.CreateMap<Models.Dish, DishDTO>();
         }
     }
 }

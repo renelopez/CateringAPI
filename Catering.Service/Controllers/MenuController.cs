@@ -20,10 +20,12 @@ namespace Catering.Service.Controllers
     public class MenuController : ApiController
     {
         public IMenuRepository MenuRepository { get; set; }
+        public IDishRepository DishRepository { get; set; }
         public IUnitOfWork UnitOfWork { get; set; }
-        public MenuController(IMenuRepository orderRepository, IUnitOfWork unitOfWork)
+        public MenuController(IMenuRepository orderRepository,IDishRepository dishRepository, IUnitOfWork unitOfWork)
         {
             this.MenuRepository = orderRepository;
+            this.DishRepository = dishRepository;
             this.UnitOfWork = unitOfWork;
         }
 
@@ -40,20 +42,21 @@ namespace Catering.Service.Controllers
             return Ok(menu);
         }
         // POST: api/Menu
-        [ResponseType(typeof(Menu))]
-        public async Task<IHttpActionResult> PostMenu(MenuDTO menu)
+        [ResponseType(typeof(MenuDTO))]
+        public async Task<IHttpActionResult> PostMenu(MenuDTO menuDTO)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            var dishes = menuDTO.Dishes.Select(dish => DishRepository.GetByIdAsync(dish.Id).Result).ToList();
 
+            var model = MenuRepository.GetMenuFromDTO(menuDTO, dishes);
 
+            MenuRepository.Add(model);
+            //await UnitOfWork.CommitAsync();
 
-            MenuRepository.Add(menu);
-            await UnitOfWork.CommitAsync();
-
-            return CreatedAtRoute("DefaultApi", new { id = menu.Id }, menu);
+            return CreatedAtRoute("DefaultApi", new { id = menuDTO.Id }, menuDTO);
         }
 
     }

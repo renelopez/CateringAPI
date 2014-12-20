@@ -62,6 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CateringContext.cs" />
+    <Compile Include="Migrations\201412192242279_AddedMenu.cs" />
+    <Compile Include="Migrations\201412192242279_AddedMenu.Designer.cs">
+      <DependentUpon>201412192242279_AddedMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderDish.cs" />
     <Compile Include="Models\MenuDish.cs" />
     <Compile Include="Repositories\Dish\DishDTO.cs" />
@@ -100,6 +104,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201411221846387_WTF.resx">
       <DependentUpon>201411221846387_WTF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412192242279_AddedMenu.resx">
+      <DependentUpon>201412192242279_AddedMenu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -14,5 +14,6 @@ namespace Catering.Data.Repositories.Dish
         Task<bool> ExistsAsync(Expression<Func<Models.Dish, bool>> predicate);
 
         Task<List<DishDTO>> GetDisplayDataAsync();
+        Task<Models.Dish> GetByIdAsync(int id);
     }
 }
